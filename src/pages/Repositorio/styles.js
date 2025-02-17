@@ -13,7 +13,7 @@ export const Loading = styled.div`
 export const Container = styled.div`
     max-width: 700px;
     background: #fff;
-    border-radius: 4px;
+    border-radius: 5px;
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
     padding: 30px;
     margin: 80px auto;
@@ -61,13 +61,14 @@ export const IssuesList = styled.ul`
     li{
         display: flex;
         padding: 15px 10px;
+        border-top: 1px solid #eee;
     }
 
     img{
         width: 36px;
         height: 36px;
         border-radius: 50%;
-        border: 2px solid #0D2636;
+        border: 1px solid #0D2636;
     }
 
     div{
@@ -103,4 +104,47 @@ export const IssuesList = styled.ul`
             margin-left: 10px;
         }
     }
+`;
+
+export const PageActions = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button{
+        outline:0;
+        border:0;
+        background:#222;
+        color: #FFF;
+        padding: 5px 10px;
+        border-radius: 4px;
+
+        &:disabled{
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+`;
+
+export const FilterList = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 15px 0;
+
+    button{
+        outline:0;
+        border:0;
+        background:#222;
+        color: #FFF;
+        margin: 0 3px;
+        padding: 8px;
+        border-radius: 4px;
+
+        &:nth-child(${props => props.active + 1}){
+            background: #0071db;
+            color: #FFF;
+        }
+    };
+
 `;
